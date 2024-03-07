@@ -2,6 +2,7 @@
 
 namespace App\Repositories\ChatBot;
 
+use App\Models\CatStatusComprobantes;
 use App\Models\TblComprobantesPagoClientes;
 use Carbon\Carbon;
 
@@ -15,6 +16,10 @@ class ComprobantesPagoRepository
         $registro->fechaRegistro           = Carbon::now();
         $registro->fkCatStatusComprobantes = 1;
         $registro->save();
+    }
+
+    public function obtenerStatusComprobantes () {
+        return CatStatusComprobantes::get();
     }
 
     public function obtenerComprobantesPagoPorStatus ($status) {

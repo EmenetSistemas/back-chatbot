@@ -25,6 +25,28 @@ class ComprobantesPagoService
         );
     }
 
+    public function obtenerStatusComprobantes () {
+        $statusComprobantes = $this->comprobantesPagoRepository->obtenerStatusComprobantes();
+        $opcionesSelect = [];
+
+        foreach( $statusComprobantes as $item ){
+            $temp = [
+                'value' => $item->pkCatStatusComprobantes,
+                'label' => $item->nombre,
+                'checked' => false
+            ];
+
+            array_push($opcionesSelect, $temp);
+        }
+        
+        return response()->json(
+            [
+                'data' => $opcionesSelect,
+                'mensaje' => 'Se consultaron los Status Comprobantes con éxito'
+            ]
+        );
+    }
+
     public function obtenerComprobantesPagoPorStatus ($status) {
         $comprobantes = $this->comprobantesPagoRepository->obtenerComprobantesPagoPorStatus($status);
 
