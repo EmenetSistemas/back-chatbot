@@ -51,6 +51,16 @@ class ComprobantesPagoService
     public function obtenerComprobantesPagoPorStatus ($status) {
         $comprobantes = $this->comprobantesPagoRepository->obtenerComprobantesPagoPorStatus($status);
 
+        if (count($comprobantes) == 0) {
+            return response()->json(
+                [
+                    'mensaje' => 'No se encontrarón comprobantes para el status seleccionado',
+                    'status' => 204
+                ],
+                200
+            );
+        }
+
         return response()->json(
             [
                 'data' => [
