@@ -24,4 +24,18 @@ class ComprobantesPagoService
             200
         );
     }
+
+    public function obtenerComprobantesPagoPorStatus ($status) {
+        $comprobantes = $this->comprobantesPagoRepository->obtenerComprobantesPagoPorStatus($status);
+
+        return response()->json(
+            [
+                'data' => [
+                    'comprobantes' => $comprobantes
+                ],
+                'mensaje' => 'Se consultaron los comprobantes con éxito'
+            ],
+            200
+        );
+    }
 }

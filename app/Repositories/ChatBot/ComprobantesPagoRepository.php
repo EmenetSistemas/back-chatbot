@@ -16,4 +16,22 @@ class ComprobantesPagoRepository
         $registro->fkCatStatusComprobantes = 1;
         $registro->save();
     }
+
+    public function obtenerComprobantesPagoPorStatus ($status) {
+        $query = TblComprobantesPagoClientes::select(
+                                                'tblComprobantesPagoClientes.pkTblComprobantesPagoClientes as id',
+                                                'tblComprobantesPagoClientes.nombreServicio as nombreServicio',
+                                                'tblComprobantesPagoClientes.numeroContacto as numeroContacto',
+                                                'tblComprobantesPagoClientes.comprobantePago as comprobantePago',
+                                                'tblComprobantesPagoClientes.ticketPagoCliente as ticketPagoCliente',
+                                                'tblComprobantesPagoClientes.observaciones as observaciones',
+                                                'tblComprobantesPagoClientes.fechaRegistro as fechaRegistro',
+                                                'tblComprobantesPagoClientes.fechaEnvioComprobante as fechaEnvioComprobante',
+                                                'catStatusComprobantes.nombre as status'
+                                            )
+                                            ->join('catStatusComprobantes', 'catStatusComprobantes.pkCatStatusComprobantes', 'tblComprobantesPagoClientes.fkCatStatusComprobantes')
+                                            ->whereIn('tblComprobantesPagoClientes.fkCatStatusComprobantes', $status);
+
+        return $query->get();
+    }
 }

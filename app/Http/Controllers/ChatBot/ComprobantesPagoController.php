@@ -31,4 +31,19 @@ class ComprobantesPagoController extends Controller
             );
         }
     }
+
+    public function obtenerComprobantesPagoPorStatus (Request $request) {
+        try{
+            return $this->comprobantesPagoService->obtenerComprobantesPagoPorStatus($request->all());
+        } catch( \Throwable $error ) {
+            Log::alert($error);
+            return response()->json(
+                [
+                    'error' => $error,
+                    'mensaje' => 'Ocurrió un error al consultar' 
+                ], 
+                500
+            );
+        }
+    }
 }
