@@ -31,4 +31,8 @@ class ComprobantesPagoController extends Controller
             );
         }
     }
+
+    public function prueba () {
+        return 'hola desde controlador';
+    }
 }
