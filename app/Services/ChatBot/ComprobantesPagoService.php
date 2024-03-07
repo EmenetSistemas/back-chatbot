@@ -54,7 +54,7 @@ class ComprobantesPagoService
         if (count($comprobantes) == 0) {
             return response()->json(
                 [
-                    'mensaje' => 'No se encontrarón comprobantes para el status seleccionado',
+                    'mensaje' => 'No se encontraron comprobantes para el status seleccionado',
                     'status' => 204
                 ],
                 200
