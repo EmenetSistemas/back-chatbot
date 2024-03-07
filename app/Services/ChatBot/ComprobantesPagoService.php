@@ -49,7 +49,6 @@ class ComprobantesPagoService
     }
 
     public function obtenerComprobantesPagoPorStatus ($status) {
-        Log::alert($status);
         $comprobantes = $this->comprobantesPagoRepository->obtenerComprobantesPagoPorStatus($status);
 
         return response()->json(

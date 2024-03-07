@@ -5,6 +5,7 @@ namespace App\Repositories\ChatBot;
 use App\Models\CatStatusComprobantes;
 use App\Models\TblComprobantesPagoClientes;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class ComprobantesPagoRepository
 {
@@ -30,8 +31,8 @@ class ComprobantesPagoRepository
                                                 'tblComprobantesPagoClientes.comprobantePago as comprobantePago',
                                                 'tblComprobantesPagoClientes.ticketPagoCliente as ticketPagoCliente',
                                                 'tblComprobantesPagoClientes.observaciones as observaciones',
-                                                'tblComprobantesPagoClientes.fechaRegistro as fechaRegistro',
-                                                'tblComprobantesPagoClientes.fechaEnvioComprobante as fechaEnvioComprobante',
+                                                DB::raw("DATE_FORMAT(tblComprobantesPagoClientes.fechaRegistro, '%d-%m-%Y') as fechaRegistro"),
+                                                DB::raw("DATE_FORMAT(tblComprobantesPagoClientes.fechaEnvioComprobante, '%d-%m-%Y') as fechaEnvioComprobante"),
                                                 'catStatusComprobantes.nombre as status'
                                             )
                                             ->join('catStatusComprobantes', 'catStatusComprobantes.pkCatStatusComprobantes', 'tblComprobantesPagoClientes.fkCatStatusComprobantes')
