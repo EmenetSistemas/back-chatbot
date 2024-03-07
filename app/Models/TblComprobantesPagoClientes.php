@@ -16,7 +16,7 @@ class TblComprobantesPagoClientes extends Model
         'pkTblComprobantesPagoClientes',
         'nombreServicio',
         'numeroContacto',
-        'comporbantePago',
+        'comprobantePago',
         'ticketPagoCliente',
         'observaciones',
         'fechaRegistro',
