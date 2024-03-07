@@ -11,7 +11,7 @@ class ComprobantesPagoRepository
         $registro = new TblComprobantesPagoClientes();
         $registro->nombreServicio          = $comprobante['nombreServicio'];
         $registro->numeroContacto          = $comprobante['numeroContacto'];
-        $registro->comporbantePago         = $comprobante['comporbantePago'];
+        $registro->comprobantePago         = $comprobante['comprobantePago'];
         $registro->fechaRegistro           = Carbon::now();
         $registro->fkCatStatusComprobantes = 1;
         $registro->save();

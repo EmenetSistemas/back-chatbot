@@ -17,9 +17,9 @@ class ComprobantesPagoController extends Controller
         $this->comprobantesPagoService = $ComprobantesPagoService;
     }
 
-    public function capturaComporbantePago (Request $request) {
+    public function capturaComprobantePago (Request $request) {
         try{
-            return $this->comprobantesPagoService->capturaComporbantePago($request->all());
+            return $this->comprobantesPagoService->capturaComprobantePago($request->all());
         } catch( \Throwable $error ) {
             Log::alert($error);
             return response()->json(

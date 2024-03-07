@@ -14,7 +14,7 @@ class ComprobantesPagoService
         $this->comprobantesPagoRepository = $ComprobantesPagoRepository;
     }
 
-    public function capturaComporbantePago ($comprobante) {
+    public function capturaComprobantePago ($comprobante) {
         $this->comprobantesPagoRepository->registrarComprobantePago($comprobante);
 
         return response()->json(
