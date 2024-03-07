@@ -53,6 +53,7 @@ class ComposerStaticInitf6640f273ea6734bbca38f52da7c2a69
         'T' => 
         array (
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
+            'Theanik\\LaravelMoreCommand\\' => 27,
             'Tests\\' => 6,
             'Termwind\\' => 9,
         ),
@@ -195,6 +196,10 @@ class ComposerStaticInitf6640f273ea6734bbca38f52da7c2a69
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
             0 => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src',
+        ),
+        'Theanik\\LaravelMoreCommand\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/theanik/laravel-more-command/src',
         ),
         'Tests\\' => 
         array (
@@ -531,6 +536,7 @@ class ComposerStaticInitf6640f273ea6734bbca38f52da7c2a69
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\ChatBot\\ComprobantesPagoController' => __DIR__ . '/../..' . '/app/Http/Controllers/ChatBot/ComprobantesPagoController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -6503,6 +6509,19 @@ class ComposerStaticInitf6640f273ea6734bbca38f52da7c2a69
         'TheSeer\\Tokenizer\\TokenCollectionException' => __DIR__ . '/..' . '/theseer/tokenizer/src/TokenCollectionException.php',
         'TheSeer\\Tokenizer\\Tokenizer' => __DIR__ . '/..' . '/theseer/tokenizer/src/Tokenizer.php',
         'TheSeer\\Tokenizer\\XMLSerializer' => __DIR__ . '/..' . '/theseer/tokenizer/src/XMLSerializer.php',
+        'Theanik\\LaravelMoreCommand\\Commands\\ClearLogCommand' => __DIR__ . '/..' . '/theanik/laravel-more-command/src/Commands/ClearLogCommand.php',
+        'Theanik\\LaravelMoreCommand\\Commands\\CommandGenerator' => __DIR__ . '/..' . '/theanik/laravel-more-command/src/Commands/CommandGenerator.php',
+        'Theanik\\LaravelMoreCommand\\Commands\\CreateBladeCommand' => __DIR__ . '/..' . '/theanik/laravel-more-command/src/Commands/CreateBladeCommand.php',
+        'Theanik\\LaravelMoreCommand\\Commands\\CreateModuleBladeCommand' => __DIR__ . '/..' . '/theanik/laravel-more-command/src/Commands/CreateModuleBladeCommand.php',
+        'Theanik\\LaravelMoreCommand\\Commands\\CreateModuleRepositoryCommand' => __DIR__ . '/..' . '/theanik/laravel-more-command/src/Commands/CreateModuleRepositoryCommand.php',
+        'Theanik\\LaravelMoreCommand\\Commands\\CreateModuleServiceCommand' => __DIR__ . '/..' . '/theanik/laravel-more-command/src/Commands/CreateModuleServiceCommand.php',
+        'Theanik\\LaravelMoreCommand\\Commands\\CreateModuleTraitCommand' => __DIR__ . '/..' . '/theanik/laravel-more-command/src/Commands/CreateModuleTraitCommand.php',
+        'Theanik\\LaravelMoreCommand\\Commands\\CreateRepositoryCommand' => __DIR__ . '/..' . '/theanik/laravel-more-command/src/Commands/CreateRepositoryCommand.php',
+        'Theanik\\LaravelMoreCommand\\Commands\\CreateServiceCommand' => __DIR__ . '/..' . '/theanik/laravel-more-command/src/Commands/CreateServiceCommand.php',
+        'Theanik\\LaravelMoreCommand\\Commands\\CreateTraitCommand' => __DIR__ . '/..' . '/theanik/laravel-more-command/src/Commands/CreateTraitCommand.php',
+        'Theanik\\LaravelMoreCommand\\LaravelMoreCommandProvider' => __DIR__ . '/..' . '/theanik/laravel-more-command/src/LaravelMoreCommandProvider.php',
+        'Theanik\\LaravelMoreCommand\\Support\\FileGenerator' => __DIR__ . '/..' . '/theanik/laravel-more-command/src/Support/FileGenerator.php',
+        'Theanik\\LaravelMoreCommand\\Support\\GenerateFile' => __DIR__ . '/..' . '/theanik/laravel-more-command/src/Support/GenerateFile.php',
         'TijsVerkoyen\\CssToInlineStyles\\CssToInlineStyles' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/CssToInlineStyles.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Processor.php',

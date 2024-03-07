@@ -2,4 +2,4 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::post('/saludo', 'App\Http\Controllers\ComprobantesPagoController@saludo');
+Route::post('/comporbantesPago/capturaComporbantePago', 'App\Http\Controllers\ComprobantesPagoController@capturaComporbantePago');
