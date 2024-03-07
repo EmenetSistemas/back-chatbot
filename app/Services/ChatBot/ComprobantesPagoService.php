@@ -3,6 +3,7 @@
 namespace App\Services\ChatBot;
 
 use App\Repositories\ChatBot\ComprobantesPagoRepository;
+use Illuminate\Support\Facades\Log;
 
 class ComprobantesPagoService
 {
@@ -48,6 +49,7 @@ class ComprobantesPagoService
     }
 
     public function obtenerComprobantesPagoPorStatus ($status) {
+        Log::alert($status);
         $comprobantes = $this->comprobantesPagoRepository->obtenerComprobantesPagoPorStatus($status);
 
         return response()->json(
