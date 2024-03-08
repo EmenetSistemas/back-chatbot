@@ -24,7 +24,7 @@ class ComprobantesPagoRepository
         return CatStatusComprobantes::get();
     }
 
-    public function obtenerComprobantesPagoPorStatus ($status) {
+    public function obtenerComprobantesPagoPorStatus ($status, $id = 0) {
         $query = TblComprobantesPagoClientes::select(
                                                 'tblComprobantesPagoClientes.pkTblComprobantesPagoClientes as id',
                                                 'tblComprobantesPagoClientes.nombreServicio as nombreServicio',
@@ -37,8 +37,15 @@ class ComprobantesPagoRepository
                                                 DB::raw("DATE_FORMAT(tblComprobantesPagoClientes.fechaEnvioComprobante, '%d-%m-%Y') as fechaEnvioComprobante"),
                                                 'catStatusComprobantes.nombre as status'
                                             )
-                                            ->join('catStatusComprobantes', 'catStatusComprobantes.pkCatStatusComprobantes', 'tblComprobantesPagoClientes.fkCatStatusComprobantes')
-                                            ->whereIn('tblComprobantesPagoClientes.fkCatStatusComprobantes', $status);
+                                            ->join('catStatusComprobantes', 'catStatusComprobantes.pkCatStatusComprobantes', 'tblComprobantesPagoClientes.fkCatStatusComprobantes');
+
+        if ($status != null) {
+            $query->whereIn('tblComprobantesPagoClientes.fkCatStatusComprobantes', $status);
+        }
+
+        if ($id != 0) {
+            $query->where('tblComprobantesPagoClientes.pkTblComprobantesPagoClientes', $id);
+        }
 
         return $query->get();
     }
