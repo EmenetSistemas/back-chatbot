@@ -14,6 +14,7 @@ class ComprobantesPagoRepository
         $registro->nombreServicio          = $comprobante['nombreServicio'];
         $registro->numeroContacto          = $comprobante['numeroContacto'];
         $registro->comprobantePago         = $comprobante['comprobantePago'];
+        $registro->tipoArchivoComprobante  = $comprobante['tipoArchivoComprobante'];
         $registro->fechaRegistro           = Carbon::now();
         $registro->fkCatStatusComprobantes = 1;
         $registro->save();
@@ -29,6 +30,7 @@ class ComprobantesPagoRepository
                                                 'tblComprobantesPagoClientes.nombreServicio as nombreServicio',
                                                 'tblComprobantesPagoClientes.numeroContacto as numeroContacto',
                                                 'tblComprobantesPagoClientes.comprobantePago as comprobantePago',
+                                                'tblComprobantesPagoClientes.tipoArchivoComprobante as tipoArchivoComprobante',
                                                 'tblComprobantesPagoClientes.ticketPagoCliente as ticketPagoCliente',
                                                 'tblComprobantesPagoClientes.observaciones as observaciones',
                                                 DB::raw("DATE_FORMAT(tblComprobantesPagoClientes.fechaRegistro, '%d-%m-%Y') as fechaRegistro"),

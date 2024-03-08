@@ -17,6 +17,7 @@ class TblComprobantesPagoClientes extends Model
         'nombreServicio',
         'numeroContacto',
         'comprobantePago',
+        'tipoArchivoComprobante',
         'ticketPagoCliente',
         'observaciones',
         'fechaRegistro',
