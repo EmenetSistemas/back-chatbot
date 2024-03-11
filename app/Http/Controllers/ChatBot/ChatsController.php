@@ -32,9 +32,9 @@ class ChatsController extends Controller
         }
     }
 
-    public function registrarChatEnEspera (Request $request) {
+    public function registrarSolicitudInstalacion (Request $request) {
         try{
-            return $this->chatsService->registrarChatEnEspera($request);
+            return $this->chatsService->registrarSolicitudInstalacion($request);
         } catch( \Throwable $error ) {
             Log::alert($error);
             return response()->json(

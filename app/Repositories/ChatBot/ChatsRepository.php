@@ -14,7 +14,13 @@ class ChatsRepository
         return $query->count() > 0;
     }
     
-    public function registrarChatEnEspera ($chat) {
+    public function registrarSolicitudInstalacion ($solicitud) {
 
+    }
+
+    public function registrarChatBlackList ($telefono) {
+        $registro = new BlackList();
+        $registro->contacto = $telefono;
+        $registro->save();
     }
 }
