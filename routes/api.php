@@ -11,6 +11,6 @@ Route::get('/chats/validarSesion/{telefono}', 'App\Http\Controllers\ChatBot\Chat
 Route::post('/chats/registrarSolicitudInstalacion', 'App\Http\Controllers\ChatBot\ChatsController@registrarSolicitudInstalacion');
 Route::get('/chats/obtenerChatsEnEspera', 'App\Http\Controllers\ChatBot\ChatsController@obtenerChatsEnEspera');
 
-Route::get('/chats/agregarChatBlackList', 'App\Http\Controllers\ChatBot\ChatsController@agregarChatBlackList');
+Route::get('/chats/agregarChatBlackList/{telefono}', 'App\Http\Controllers\ChatBot\ChatsController@agregarChatBlackList');
 Route::get('/chats/obtenerChatBlackList', 'App\Http\Controllers\ChatBot\ChatsController@obtenerChatBlackList');
 Route::get('/chats/eliminarChatBlackList', 'App\Http\Controllers\ChatBot\ChatsController@eliminarChatBlackList');
