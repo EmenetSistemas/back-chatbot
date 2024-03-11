@@ -7,9 +7,7 @@ use App\Models\BlackList;
 class ChatsRepository
 {
     public function validarSesion ($telefono) {
-        $query = BlackList::where([
-            'contacto', $telefono
-        ]);
+        $query = BlackList::where('contacto', $telefono);
 
         return $query->count() > 0;
     }
