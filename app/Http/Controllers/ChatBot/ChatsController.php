@@ -76,4 +76,19 @@ class ChatsController extends Controller
             );
         }
     }
+
+    public function eliminarChatBlackList ($telefono) {
+        try{
+            return $this->chatsService->eliminarChatBlackList($telefono);
+        } catch( \Throwable $error ) {
+            Log::alert($error);
+            return response()->json(
+                [
+                    'error' => $error,
+                    'mensaje' => 'Ocurrió un error al consultar'
+                ], 
+                500
+            );
+        }
+    }
 }

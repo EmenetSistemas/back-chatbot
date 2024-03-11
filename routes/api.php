@@ -13,4 +13,4 @@ Route::get('/chats/obtenerChatsEnEspera', 'App\Http\Controllers\ChatBot\ChatsCon
 
 Route::get('/chats/agregarChatBlackList/{telefono}', 'App\Http\Controllers\ChatBot\ChatsController@agregarChatBlackList');
 Route::get('/chats/obtenerChatBlackList', 'App\Http\Controllers\ChatBot\ChatsController@obtenerChatBlackList');
-Route::get('/chats/eliminarChatBlackList', 'App\Http\Controllers\ChatBot\ChatsController@eliminarChatBlackList');
+Route::get('/chats/eliminarChatBlackList/{telefono}', 'App\Http\Controllers\ChatBot\ChatsController@eliminarChatBlackList');

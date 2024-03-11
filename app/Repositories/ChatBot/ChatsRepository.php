@@ -25,4 +25,8 @@ class ChatsRepository
     public function obtenerChatBlackList () {
         return BlackList::get();
     }
+
+    public function eliminarChatBlackList ($telefono) {
+        BlackList::where('contacto', $telefono)->delete();
+    }
 }

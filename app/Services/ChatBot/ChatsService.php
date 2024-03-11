@@ -66,4 +66,15 @@ class ChatsService
             200
         );
     }
+
+    public function eliminarChatBlackList ($telefono) {
+        $this->chatsRepository->eliminarChatBlackList($telefono);
+
+        return response()->json(
+            [
+                'mensaje' => 'Se eliminó el chat a la BlackList con éxito'
+            ],
+            200
+        );
+    }
 }
