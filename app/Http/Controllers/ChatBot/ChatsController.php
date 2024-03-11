@@ -47,6 +47,21 @@ class ChatsController extends Controller
         }
     }
 
+    public function agregarChatBlackList ($telefono) {
+        try{
+            return $this->chatsService->agregarChatBlackList($telefono);
+        } catch( \Throwable $error ) {
+            Log::alert($error);
+            return response()->json(
+                [
+                    'error' => $error,
+                    'mensaje' => 'Ocurrió un error al consultar'
+                ], 
+                500
+            );
+        }
+    }
+
     public function obtenerChatBlackList () {
         try{
             return $this->chatsService->obtenerChatBlackList();
@@ -55,7 +70,7 @@ class ChatsController extends Controller
             return response()->json(
                 [
                     'error' => $error,
-                    'mensaje' => 'Ocurrió un error al consultar' 
+                    'mensaje' => 'Ocurrió un error al consultar'
                 ], 
                 500
             );
