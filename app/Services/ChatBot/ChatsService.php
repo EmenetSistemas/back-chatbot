@@ -45,7 +45,7 @@ class ChatsService
     }
 
     public function agregarChatBlackList ($telefono) {
-        $this->chatsRepository->registrarChatBlackList($telefono);
+        $this->chatsRepository->registrarChatBlackList('521'.$telefono);
 
         return response()->json(
             [
