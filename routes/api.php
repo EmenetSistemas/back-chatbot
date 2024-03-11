@@ -9,4 +9,5 @@ Route::get('/comprobantesPago/obtenerDetallComprobante/{id}', 'App\Http\Controll
 
 Route::get('/chats/validarSesion/{telefono}', 'App\Http\Controllers\ChatBot\ChatsController@validarSesion');
 Route::post('/chats/registrarSolicitudInstalacion', 'App\Http\Controllers\ChatBot\ChatsController@registrarSolicitudInstalacion');
+Route::get('/chats/obtenerChatBlackList', 'App\Http\Controllers\ChatBot\ChatsController@obtenerChatBlackList');
 Route::get('/chats/obtenerChatsEnEspera', 'App\Http\Controllers\ChatBot\ChatsController@obtenerChatsEnEspera');

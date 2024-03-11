@@ -21,4 +21,8 @@ class ChatsRepository
         $registro->contacto = $telefono;
         $registro->save();
     }
+
+    public function obtenerChatBlackList () {
+        return BlackList::get();
+    }
 }

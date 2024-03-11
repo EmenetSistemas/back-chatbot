@@ -46,4 +46,19 @@ class ChatsController extends Controller
             );
         }
     }
+
+    public function obtenerChatBlackList () {
+        try{
+            return $this->chatsService->obtenerChatBlackList();
+        } catch( \Throwable $error ) {
+            Log::alert($error);
+            return response()->json(
+                [
+                    'error' => $error,
+                    'mensaje' => 'Ocurrió un error al consultar' 
+                ], 
+                500
+            );
+        }
+    }
 }

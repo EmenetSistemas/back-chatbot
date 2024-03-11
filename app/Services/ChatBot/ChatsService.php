@@ -43,4 +43,16 @@ class ChatsService
             200
         );
     }
+
+    public function obtenerChatBlackList () {
+        $blacklist = $this->chatsRepository->obtenerChatBlackList();
+
+        return response()->json(
+            [
+                'data' => $blacklist,
+                'mensaje' => 'Se obtuvo la blacklist con éxito'
+            ],
+            200
+        );
+    }
 }
