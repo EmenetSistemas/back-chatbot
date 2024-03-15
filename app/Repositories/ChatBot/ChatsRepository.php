@@ -3,6 +3,7 @@
 namespace App\Repositories\ChatBot;
 
 use App\Models\BlackList;
+use App\Models\TblSolicitudesInstalacion;
 
 class ChatsRepository
 {
@@ -13,7 +14,14 @@ class ChatsRepository
     }
     
     public function registrarSolicitudInstalacion ($solicitud) {
-
+        $registro = new TblSolicitudesInstalacion();
+        $registro->nombre                   = $solicitud['nombre'];
+        $registro->telefono                 = $solicitud['telefono'];
+        $registro->localidad                = $solicitud['localidad'];
+        $registro->paquete                  = $solicitud['paquete'];
+        $registro->ubicacion                = $solicitud['ubicacion'];
+        $registro->caracteristicasDomicilio = $solicitud['caracteristicasDomicilio'];
+        $registro->save();
     }
 
     public function registrarChatBlackList ($telefono) {
