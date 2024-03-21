@@ -33,7 +33,6 @@ class ChatsService
 
         DB::beginTransaction();
             $this->chatsRepository->registrarSolicitudInstalacion($solicitud);
-            $this->chatsRepository->registrarChatBlackList($solicitud['telefono']);
         DB::commit();
 
         return response()->json(
