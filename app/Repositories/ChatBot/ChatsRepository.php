@@ -12,17 +12,6 @@ class ChatsRepository
 
         return $query->count() > 0;
     }
-    
-    public function registrarSolicitudInstalacion ($solicitud) {
-        $registro = new TblSolicitudesInstalacion();
-        $registro->nombre                   = $solicitud['nombre'];
-        $registro->telefono                 = $solicitud['telefono'];
-        $registro->localidad                = $solicitud['localidad'];
-        $registro->paquete                  = $solicitud['paquete'];
-        $registro->ubicacion                = $solicitud['ubicacion'];
-        $registro->caracteristicasDomicilio = $solicitud['caracteristicasDomicilio'];
-        $registro->save();
-    }
 
     public function registrarChatBlackList ($telefono) {
         $registro = new BlackList();
@@ -36,5 +25,20 @@ class ChatsRepository
 
     public function eliminarChatBlackList ($telefono) {
         BlackList::where('contacto', $telefono)->delete();
+    }
+
+    public function registrarSolicitudInstalacion ($solicitud) {
+        $registro = new TblSolicitudesInstalacion();
+        $registro->nombre                   = $solicitud['nombre'];
+        $registro->telefono                 = $solicitud['telefono'];
+        $registro->localidad                = $solicitud['localidad'];
+        $registro->paquete                  = $solicitud['paquete'];
+        $registro->ubicacion                = $solicitud['ubicacion'];
+        $registro->caracteristicasDomicilio = $solicitud['caracteristicasDomicilio'];
+        $registro->save();
+    }
+
+    public function obtenerSolicitudesInstalacion () {
+        return TblSolicitudesInstalacion::get();
     }
 }

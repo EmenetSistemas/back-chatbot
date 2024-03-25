@@ -32,21 +32,6 @@ class ChatsController extends Controller
         }
     }
 
-    public function registrarSolicitudInstalacion (Request $request) {
-        try{
-            return $this->chatsService->registrarSolicitudInstalacion($request);
-        } catch( \Throwable $error ) {
-            Log::alert($error);
-            return response()->json(
-                [
-                    'error' => $error,
-                    'mensaje' => 'Ocurrió un error al consultar' 
-                ], 
-                500
-            );
-        }
-    }
-
     public function agregarChatBlackList ($telefono) {
         try{
             return $this->chatsService->agregarChatBlackList($telefono);
@@ -86,6 +71,36 @@ class ChatsController extends Controller
                 [
                     'error' => $error,
                     'mensaje' => 'Ocurrió un error al consultar'
+                ], 
+                500
+            );
+        }
+    }
+
+    public function registrarSolicitudInstalacion (Request $request) {
+        try{
+            return $this->chatsService->registrarSolicitudInstalacion($request);
+        } catch( \Throwable $error ) {
+            Log::alert($error);
+            return response()->json(
+                [
+                    'error' => $error,
+                    'mensaje' => 'Ocurrió un error al consultar' 
+                ], 
+                500
+            );
+        }
+    }
+
+    public function obtenerSolicitudesInstalacion () {
+        try{
+            return $this->chatsService->obtenerSolicitudesInstalacion();
+        } catch( \Throwable $error ) {
+            Log::alert($error);
+            return response()->json(
+                [
+                    'error' => $error,
+                    'mensaje' => 'Ocurrió un error al consultar' 
                 ], 
                 500
             );

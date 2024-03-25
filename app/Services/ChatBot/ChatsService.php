@@ -28,21 +28,6 @@ class ChatsService
         );
     }
 
-    public function registrarSolicitudInstalacion ($solicitud) {
-        Log::alert($solicitud);
-
-        DB::beginTransaction();
-            $this->chatsRepository->registrarSolicitudInstalacion($solicitud);
-        DB::commit();
-
-        return response()->json(
-            [
-                'mensaje' => 'Se registró la solicitud con éxito'
-            ],
-            200
-        );
-    }
-
     public function agregarChatBlackList ($telefono) {
         $this->chatsRepository->registrarChatBlackList('521'.$telefono);
 
@@ -72,6 +57,31 @@ class ChatsService
         return response()->json(
             [
                 'mensaje' => 'Se eliminó el chat a la BlackList con éxito'
+            ],
+            200
+        );
+    }
+
+    public function registrarSolicitudInstalacion ($solicitud) {
+        DB::beginTransaction();
+            $this->chatsRepository->registrarSolicitudInstalacion($solicitud);
+        DB::commit();
+
+        return response()->json(
+            [
+                'mensaje' => 'Se registró la solicitud con éxito'
+            ],
+            200
+        );
+    }
+
+    public function obtenerSolicitudesInstalacion () {
+        $solicitudes = $this->chatsRepository->obtenerSolicitudesInstalacion();
+
+        return response()->json(
+            [
+                'data' => $solicitudes,
+                'mensaje' => 'Se consultaron las solicitudes con éxito'
             ],
             200
         );
