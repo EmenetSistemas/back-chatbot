@@ -15,4 +15,4 @@ Route::get('/chats/obtenerChatBlackList', 'App\Http\Controllers\ChatBot\ChatsCon
 Route::get('/chats/eliminarChatBlackList/{telefono}', 'App\Http\Controllers\ChatBot\ChatsController@eliminarChatBlackList');
 
 Route::post('/chats/registrarSolicitudInstalacion', 'App\Http\Controllers\ChatBot\ChatsController@registrarSolicitudInstalacion');
-Route::post('/chats/obtenerSolicitudesInstalacion', 'App\Http\Controllers\ChatBot\ChatsController@obtenerSolicitudesInstalacion');
+Route::get('/chats/obtenerSolicitudesInstalacion', 'App\Http\Controllers\ChatBot\ChatsController@obtenerSolicitudesInstalacion');
